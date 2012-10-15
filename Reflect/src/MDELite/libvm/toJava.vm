@@ -1,0 +1,36 @@
+##Velocity Template for generating Violet XML
+##
+##
+#set($MARKER="//----")
+#foreach( $c in $classS )
+#set($classname=${c.name.replace("'","")})
+${MARKER}test_output/${classname}.java
+class ${classname} {
+
+#foreach( $a in $attributeS )
+#if( ${c.classid} == ${a.classid} )
+#set( $aname = ${a.name.replace("'","")})
+#set( $atype = ${a.type.replace("'","")})
+   public $atype $aname;
+
+#end
+#end
+#foreach( $m in $methodS )
+#if( ${c.classid} == ${m.classid} )
+#set( $mname = ${m.name.replace("'","")})
+#set( $rettype = ${m.returntype.replace("'","")})
+#set( $params=0 )
+#set( $count1=1 )
+#foreach( $p in $parameterS )
+#if( ${p.methid} == ${m.methid} )
+#set( $params=$params+1 )
+#end
+#end
+   public $rettype $mname(#foreach( $p in $parameterS )#if( ${p.methid} == ${m.methid} )#set( $ptype = ${p.type.replace("'","")})$ptype arg$count1#if( $count1 < $params ), #set( $count1=$count1+1 )#end#end#end) {
+      //Fill in method implementation
+   }
+
+#end
+#end
+}
+#end

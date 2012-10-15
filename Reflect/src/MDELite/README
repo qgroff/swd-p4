@@ -1,0 +1,76 @@
+##################
+# MDELite README
+# Don Batory
+# Eric Latimer
+
+##################
+# Requirements
+#
+
+Java
+SWI-Prolog
+
+##################
+# Preprocessing
+#
+
+You need to specify the location of your system's swi-prolog binary.  
+To do so, open the included config.properties and edit SWI_PROLOG_LOCATION
+Set it equal to the location of your swi-prolog executable
+
+Optional:
+There is a second constant in config.properties.  Most like you can leave
+unchanged.  However if you want to experiment with a secondary position
+generator, set POSITION_PACKAGE to "positioner" (without the quotes)
+
+##################
+# Warning
+#
+
+We have had problems on Windows platforms where paths to MDELite
+jar files have spaces (e.g., "C:\Program Files").  Place MDELite
+in a directory whose path includes no spaces.
+
+##################
+# Run Instructions
+#
+
+The included jar file has 2 functions: 
+    convert: convert an instance of a UML model into another
+    conform: test conformance of an instance of a UML model
+
+Let <type>,<convert2Type> := umlf | yuml | violet 
+
+To convert a file <filename> in one format <type> into another <convert2type>, 
+run the following command:
+
+    java -jar "MDELite.jar" convert <type> <convert2Type> <filename (not including dot extension)>
+
+Example:  to convert design.yuml into design.violet, run:
+
+   java -jar "MDELite.jar" convert yuml violet design
+
+To test the conformance of a file <filename> to a given format or metamodel (<type>),
+run the following command:
+
+   java -jar "MDELite.jar" conform <type>  <filename(not including dot extension)>
+
+Example: to test whether design.yuml satisfies the Prolog constraints in yuml.conform.pl:
+
+    java -jar "MDELite.jar" conform yuml  design
+
+------------------------------
+
+Finally, if MDELite.jar is in your classpath, you can invoke the above commands via:
+
+   java mdelite.Main 
+
+instead of 
+
+   java -jar "MDELite.jar"
+
+Further, you could call the convert and conform applications directly:
+
+   java mdelite.Convert ...
+   java mdelite.Conform ...
+

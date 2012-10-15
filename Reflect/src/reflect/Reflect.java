@@ -39,10 +39,7 @@ public class Reflect {
         try {
             File directory = new File(directoryArg);
             String[] dirContents = directory.list();
-            if (dirContents == null) {
-                System.err.println("Empty directory given.");
-                System.exit(1);
-            }
+            //TODO: Fail gracefully on directory with no classes
             for (int ii = 0; ii < dirContents.length; ii++) {
                 String filename = dirContents[ii];
                 if (filename.endsWith(".class") && !filename.contains("$")) {
@@ -79,7 +76,7 @@ public class Reflect {
             System.out.println("----");
         }
         else if (command.equals("mydb")) {
-            db.dbClasses.add("class(c"+db.counter[0]+",\""+cname+"\").");
+            db.dbClasses.add("class(c"+db.counter[0]+",\'"+cname+"\').");
             addAttributes(fields, db, cname);
             addMethods(constructors, methods, db, cname);
             db.counter[0]++;
