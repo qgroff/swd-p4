@@ -39,7 +39,10 @@ public class Reflect {
         try {
             File directory = new File(directoryArg);
             String[] dirContents = directory.list();
-            //TODO: Fail gracefully on directory with no classes
+            if (dirContents == null) {
+                System.err.println("Empty directory given.");
+                System.exit(1);
+            }
             for (int ii = 0; ii < dirContents.length; ii++) {
                 String filename = dirContents[ii];
                 if (filename.endsWith(".class") && !filename.contains("$")) {
