@@ -79,7 +79,7 @@ public class Reflect {
             System.out.println("----");
         }
         else if (command.equals("mydb")) {
-            db.dbClasses.add("table(class,c"+db.counter[0]+",\""+cname+"\"]).");
+            db.dbClasses.add("class(c"+db.counter[0]+",\""+cname+"\").");
             addAttributes(fields, db, cname);
             addMethods(constructors, methods, db, cname);
             db.counter[0]++;
@@ -126,7 +126,7 @@ public class Reflect {
 		Collections.sort(db.dbAttributes);
 		Collections.sort(db.dbMethods);
 		Collections.sort(db.dbParameters);
-		db.dbClasses.add(0, "%table(class,[classid,\"name\",\"fields\",\"methods\",superid]).");
+		db.dbClasses.add(0, "%table(class,[classid,\"name\"]).");
 		db.dbAttributes.add(0, "%table(attribute,[attrid,\"name\",\"type\",classid]).");
 		db.dbMethods.add(0, "%table(method,[methid,\"name\",\"returntype\",classid]).");
 		db.dbParameters.add(0, "%table(parameter,[paramid,\"type\",methid]).");

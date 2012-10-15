@@ -1,7 +1,7 @@
 %table(class,[classid,"name","fields","methods",superid]).
-table(class,c0,"Main"]).
-table(class,c1,"klass"]).
-table(class,c2,"connection"]).
+class(c0,"Main").
+class(c1,"klass").
+class(c2,"connection").
 %table(attribute,[attrid,"name","type",classid]).
 attribute(a0,'gen','String',c0).
 attribute(a1,'comp','String',c0).
@@ -52,8 +52,8 @@ method(m3,'checkNameStructure','Main',c0).
 method(m4,'printArray','Main',c0).
 method(m5,'yparser.klass','klass',c1).
 method(m6,'yparser.klass','klass',c1).
-method(m7,'toId','klass',c1).
-method(m8,'dump','klass',c1).
+method(m7,'dump','klass',c1).
+method(m8,'toId','klass',c1).
 method(m9,'yparser.connection','connection',c2).
 %table(parameter,[paramid,"type",methid]).
 parameter(p0,'String[]',m1).
@@ -71,4 +71,4 @@ parameter(p5,'String[]',m5).
 parameter(p6,'String',m6).
 parameter(p7,'String',m6).
 parameter(p8,'String',m6).
-parameter(p9,'String',m7).
+parameter(p9,'String',m8).
