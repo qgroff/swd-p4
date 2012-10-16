@@ -1,0 +1,6 @@
+SWIProlog Stderr : unique names constraint violated: i2
+SWIProlog Stderr : unique names constraint violated: c2
+SWIProlog Stderr : circular class hierarchy: c2
+SWIProlog Stderr : circular interface hierarchy: i2
+MDELite halts -- SWI Prolog Errors detected
+debug this prolog file:   tmpconform.sdb.pl

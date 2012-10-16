@@ -1,0 +1,4 @@
+SWIProlog Stderr : circular class hierarchy: Customer
+SWIProlog Stderr : circular class hierarchy: User
+MDELite halts -- SWI Prolog Errors detected
+debug this prolog file:   tmpconform.sdb.pl

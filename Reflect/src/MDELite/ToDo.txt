@@ -1,0 +1,8 @@
+-- add conformance constraint testing (e.g., see if database tuples are "correct")
+    for the remaining prolog databases.  umlf has been completed.
+
+-- change from .umlf.pl to _umlf.pl, to simplify prolog debugging.
+
+-- how can we package libpl and libvm to make it workable outside of Netbeans?
+
+-- it would be GREAT if we could clean the project without invoking bash scripts.

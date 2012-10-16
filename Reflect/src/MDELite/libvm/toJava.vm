@@ -28,6 +28,10 @@ class ${classname} {
 #end
    public $rettype $mname(#foreach( $p in $parameterS )#if( ${p.methid} == ${m.methid} )#set( $ptype = ${p.type.replace("'","")})$ptype arg$count1#if( $count1 < $params ), #set( $count1=$count1+1 )#end#end#end) {
       //Fill in method implementation
+#if( $rettype != "void" )
+      
+      return null;
+#end
    }
 
 #end
